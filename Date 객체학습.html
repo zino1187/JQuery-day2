@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Date 객체학습</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+var d = new Date(); //Date 객체 생성!!
+
+//document.write(d);
+//현재 날짜 객체 이용하여 , 오늘의 년도를 출력하시오.
+var yy=d.getFullYear();
+document.write(yy);
+
+//월 출력 
+document.write(d.getMonth());
+
+//일  day(요일), date(1~~31일)
+var day=d.getDay();
+var days=["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+
+document.write("오늘은 "+days[day]+"입니다");
+//월 및 요일은 0부터 시작!!!
+
+//6월 13일의 요일을 출력하시오..
+d.setMonth(5);//6월로 세팅...
+d.setDate(13);
+day=d.getDay(); //현재 Date 객체가 보유한 날짜정보를 기준으로
+						//요일을 얻어옴...
+document.write("오늘은 "+days[day]+"입니다");
+
+//5월달의 마지막 일 
+//document.write(d.getDate());
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

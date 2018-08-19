@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>String API 활용하기</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+//String 내장객체 
+//new 를 이용한 스트링의 생성을 명시적 생성이라한다
+//explicit 생성
+var str = new String("애플");
+var str2 = new String("애플");
+
+//implicit 묵시적, 암시적 생성이라 한다 ( 상수풀에 생성되므로)
+//메모리 효율성이 높다...
+var a="애플";
+var b="애플";
+var c="애플";
+
+function getFileInfo(){
+	//파일명과 확장자를 분리시키자!!
+	var path="test.jpg";
+	var arr=path.split(".");
+	//alert("점을 기준으로 나눈 문자열 배열의 길이는 "+arr.length);	
+	$("#filename").text(arr[0]);//innerText와 동일
+	$("#ext").text(arr[1]);
+}
+
+function getFileInfo2(obj){
+	//파일 탐색기로부터 얻은 파일경로에서 파일명만 추출해보자!!
+	//String 객체의 api 를 이용...
+	//alert(obj.value);
+	str=obj.value; //파일컴포넌트로부터 넘겨받은 파일경로..
+	//str="C:\fakepath\gvim81.exe";	
+	
+	//가장 마지막 역슬래시의 위치(index) 구하기!!
+	var index=str.lastIndexOf("\\");
+	var result=str.substring( index+1, str.length);
+	var arr=result.split(".");
+	$("#filename").text(arr[0]);
+	$("#ext").text(arr[1]);
+}
+function test(){
+	//문서내에 
+	document.getElementById("bt").value="왕버튼";
+}
+</script>
+</head>
+<body>
+	<input type="button" id="bt" value="나버튼" onClick="this.value='왕버튼'">
+
+	<input type="file" onChange="getFileInfo2(this)">	
+
+	<input type="button" value="눌러" onClick="getFileInfo()">
+	파일명:<h1 id="filename"></h1>
+	확장자:<h1 id="ext"></h1>
+</body>
+</html>

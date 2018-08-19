@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JSON 학습</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+/*
+내장객체 중 json 을 학습한다...
+json 이란?  프로그래밍 언어가 아니라, 단지 데이터를
+표현한 텍스트 기반의 표기법일 뿐이다!!
+따라서 비록 자바스크립트 객체 표기법을 사용하지만,
+메서드를 넣지 않는다...로직용 객체가 아니라 단지, 데이터
+를 담기위한 용도이기 때문에...
+특징: key-value 의 쌍으로 이루어짐..
+*/
+var dog={
+	name:"뽀미",
+	age:7,
+	isMarry:false,
+	food:["개껌","북어","닭다리"],
+	friend:{
+		name:"아롱이",
+		age:8
+	}
+}
+
+document.write(dog.name);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

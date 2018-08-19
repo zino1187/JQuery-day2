@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JSON을 이용한 유지보수성을 고려한 네비게이션</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./lib/Menu.js"></script>
+<script src="./lib/data.js"></script>
+<script>
+$(function(){
+	createMenu();	
+});
+
+//원하는 수만큼의 메뉴 생성하기!!
+function createMenu(){
+	for(var i=0;i<menuTitle.site3.length;i++){
+		var m1 = new Menu($("#navi"), menuTitle.site3[i]);
+	}
+}
+</script>
+</head>
+<body>
+	<div id="navi"></div>
+</body>
+</html>
